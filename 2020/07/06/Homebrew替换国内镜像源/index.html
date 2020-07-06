@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="mac, home-brew,">
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="“郡主，世上不如意事十居八九，既已如此，也是勉强不来了。”赵敏道：“我偏要勉强。”">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta name="description" content="问题来源：每次用Homebrew都会陷入长时间的”brew updating“     问题解决：知乎上搜到的一个解决办法 ，应该是替换了brew的源（我理解的，不一定对）。现在用brew命令时不会陷入brew updating了，不过在下大文件包时是不是如他所言的更快，这还有待验证。其实平时用brew并不多……">
+<meta name="keywords" content="mac, home-brew">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Homebrew替换国内镜像源">
+<meta property="og:url" content="http://yoursite.com/2020/07/06/Homebrew替换国内镜像源/index.html">
 <meta property="og:site_name" content="goldensoup3的毛坯房">
-<meta property="og:description" content="“郡主，世上不如意事十居八九，既已如此，也是勉强不来了。”赵敏道：“我偏要勉强。”">
+<meta property="og:description" content="问题来源：每次用Homebrew都会陷入长时间的”brew updating“     问题解决：知乎上搜到的一个解决办法 ，应该是替换了brew的源（我理解的，不一定对）。现在用brew命令时不会陷入brew updating了，不过在下大文件包时是不是如他所言的更快，这还有待验证。其实平时用brew并不多……">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-04T04:53:15.000Z">
+<meta property="og:updated_time" content="2020-07-06T03:38:03.251Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
-<meta name="twitter:description" content="“郡主，世上不如意事十居八九，既已如此，也是勉强不来了。”赵敏道：“我偏要勉强。”">
+<meta name="twitter:title" content="Homebrew替换国内镜像源">
+<meta name="twitter:description" content="问题来源：每次用Homebrew都会陷入长时间的”brew updating“     问题解决：知乎上搜到的一个解决办法 ，应该是替换了brew的源（我理解的，不一定对）。现在用brew命令时不会陷入brew updating了，不过在下大文件包时是不是如他所言的更快，这还有待验证。其实平时用brew并不多……">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/">
+  <link rel="canonical" href="http://yoursite.com/2020/07/06/Homebrew替换国内镜像源/">
 
 
 
 
 
-  <title>categories | goldensoup3的毛坯房</title>
+  <title>Homebrew替换国内镜像源 | goldensoup3的毛坯房</title>
   
 
 
@@ -240,40 +241,152 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/06/Homebrew替换国内镜像源/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="goldensoup3">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="goldensoup3的毛坯房">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">categories</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
-                暂无分类
-            </div>
-            <div class="category-all">
+          <h1 class="post-title" itemprop="name headline">Homebrew替换国内镜像源</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
               
-            </div>
-          </div>
-        
-      </div>
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-06T11:30:07+08:00">
+                2020-07-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 已有
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次浏览
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>问题来源：每次用Homebrew都会陷入长时间的<em>”brew updating“</em>   </p>
+<hr>
+<p>问题解决：知乎上搜到的一个<a href="https://zhuanlan.zhihu.com/p/146001246" target="_blank" rel="noopener">解决办法</a></p>
+<p>，应该是替换了brew的源（我理解的，不一定对）。现在用brew命令时不会陷入<em>brew updating</em>了，不过在下大文件包时是不是如他所言的更快，这还有待验证。其实平时用brew并不多……</p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/mac-home-brew/" rel="tag"># mac, home-brew</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/07/06/Sierra升Mojave踩到的坑/" rel="next" title="Sierra升Mojave踩到的坑">
+                <i class="fa fa-chevron-left"></i> Sierra升Mojave踩到的坑
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
