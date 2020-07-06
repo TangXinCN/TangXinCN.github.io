@@ -252,6 +252,130 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/06/Sierra升Mojave踩到的坑/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="goldensoup3">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="goldensoup3的毛坯房">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/06/Sierra升Mojave踩到的坑/" itemprop="url">Sierra升Mojave踩到的坑</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-06T10:17:49+08:00">
+                2020-07-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>问题来源：IDEA里Git不能用了，显示<em>“cannot run git”</em>  </p>
+<hr>
+<p>问题解决：  </p>
+<p>终端里显示没有Git命令，判断是Git没装好。mac里的Git依赖于Xcode，就想着先打开Xcode看一下，结果发现原来的Xcode打不开了，直接报错。报错信息里显示Xcode是8.x版本。网上查了一下，系统升级到Mojave以后，不再支持Xcode 8版本，需要下载10.x版本。于是去苹果开发者网站下载了Xcode 10.2以及相应的command line tools，分别安装好。  </p>
+<p>后面还走了一点弯路：下载Xcode 10.2安装时一直点点点，没考虑路径，卸载原先的不能用的Xcode 8，然后想起来要把Xcode.app移动到Applicaitions文件夹下，移动过来后，终端里Git又不能用了，报错信息为<em>“xcrun: error: active developer path does not exist<br>Use <code>sudo xcode-select --switch path/to/Xcode.app</code> to specify the Xcode that you wish to use for command line developer tools, or use <code>xcode-select --install</code> to install the standalone command line developer tools.<br>See <code>man xcode-select</code> for more details.”</em>。哦，路径又有问题，按提示改一下路径<em>“sudo xcode-select –switch /Applications/Xcode.app”</em> 就好了。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/04/The-Secret-of-Becoming-Mentally-Strong/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -540,7 +664,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
