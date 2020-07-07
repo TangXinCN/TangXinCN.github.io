@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="goldensoup3的毛坯房">
 <meta property="og:description" content="HashMap的底层原理涉及到的点真不少，下面一条一条捋清楚。 一、HashMap的结构实现 数组+链表/红黑树（JDK1.8新增） 数组的元素是一个内部类Node的实例，Node不仅仅包含key-value值，还包括哈希值hashcode和指向下一个元素的指针next。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-07-07T08:44:03.429Z">
+<meta property="og:updated_time" content="2020-07-07T12:49:58.547Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HashMap底层原理">
 <meta name="twitter:description" content="HashMap的底层原理涉及到的点真不少，下面一条一条捋清楚。 一、HashMap的结构实现 数组+链表/红黑树（JDK1.8新增） 数组的元素是一个内部类Node的实例，Node不仅仅包含key-value值，还包括哈希值hashcode和指向下一个元素的指针next。">
@@ -360,9 +360,9 @@
 <p>计算key的哈希值，对哈希值取模（hashcode % capacity），根据模查找数组下标确定桶，接下来分不同情况：</p>
 <ul>
 <li>如果该桶是空的，直接将节点放置在桶内。</li>
-<li>如果桶里有数据，检查key值，若与将要放置的key相同，则直接覆盖。若不同，遍历序列，过程中如遇到相同key的则直接覆盖。如果遍历完没有key相同的，则根据序列总数判断是链表还是红黑树，是链表的话按头插法插入节点，是红黑树则按红黑树插入规则插入节点。</li>
+<li>如果桶里有数据，检查key值，若与将要放置的key相同，则直接覆盖。若不同，判断节点是不是红黑树节点，若是，则按红黑树插入规则插入节点，若不是，遍历链表，若链表长度大于8，则转换为红黑树，插入节点，若不大于8，则从链表插入节点，中间若有key相同的则覆盖。</li>
 </ul>
-<p>插入完节后，还需检查是否需要扩容。若size &gt; threshold，则需要扩容。</p>
+<p>插入节点后，还需检查是否需要扩容。若size &gt; threshold，则需要扩容。</p>
 <p><strong>四、hash过程的实际实现</strong></p>
 <p>首先扯点远的，一般来说，对HashTable取模，应该选取素数。为什么呢，反向解释，假如num是一个合数，若hashcode和num有一个公约数m， hashcode % num == （hashcode‘ <em> m） % （num’  </em> m）== （hashcode‘ % num’）* m，也就是说得到的模值一定是m的倍数，那么分配键值对的时候一定不会分到非m倍数下标的桶位置，这样带来的结果就是哈希冲突的几率变大。</p>
 <p>所以按理说HashMap的capacity应该设置成素数更好。</p>
@@ -377,7 +377,11 @@
 <p>实际上从JDK1.8开始有个巧妙的实现。继续以capacity=16为例，扩容后变为32。根据上面的实现，模16等价于（&amp;00001111），模32等价于（&amp;00011111），可以发现，低四位在&amp;运算后是不变的，区别就在于第五位。若hashcode的第五位为0，则模16与模32结果相同；若为1，则模32的结果等于模16的值再加16。</p>
 <p>推广一下，当capacity为2^n，扩容为2^(n+1)，扩容后只需要看hashcode的第n+1位，是0的话索引值不变，是1的话索引变为“原索引值+原来的capacity”。</p>
 <p>此外，JDK1.7里扩容后需要重新哈希，而链表插入元素采用头插法，所以相同索引位置的元素顺序也变了，与扩容前顺序相反。</p>
-<p>而JDK1.8不会倒置。</p>
+<p>而JDK1.8链表插入元素改用<strong>尾插法</strong>，所以不会倒序。</p>
+<p>JDK1.7和1.8还有一个区别，在插入节点时，1.7是先判断是否需要扩容再插入，1.8是插入后再判断是否需要扩容。</p>
+<p><strong>六、JDK1.8中链表与红黑树的转换</strong></p>
+<p>链表长度超过8则转换成红黑树，红黑树节点树少于6则转换为链表。</p>
+<p>为什么转回来的阈值是6？因为都是8的话，会一直发生链表和红黑树的不断转化。</p>
 
       
     </div>
