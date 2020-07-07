@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Java,HashMap,">
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="“郡主，世上不如意事十居八九，既已如此，也是勉强不来了。”赵敏道：“我偏要勉强。”">
-<meta property="og:type" content="website">
-<meta property="og:title" content="goldensoup3的毛坯房">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+<meta name="description" content="HashMap的底层原理涉及到的点真不少，下面一条一条捋清楚。 一、HashMap的结构实现 数组+链表/红黑树（JDK1.8新增） 数组的元素是一个内部类Node的实例，Node不仅仅包含key-value值，还包括哈希值hashcode和指向下一个元素的指针next。">
+<meta name="keywords" content="Java,HashMap">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HashMap底层原理">
+<meta property="og:url" content="http://yoursite.com/2020/06/07/HashMap底层原理/index.html">
 <meta property="og:site_name" content="goldensoup3的毛坯房">
-<meta property="og:description" content="“郡主，世上不如意事十居八九，既已如此，也是勉强不来了。”赵敏道：“我偏要勉强。”">
+<meta property="og:description" content="HashMap的底层原理涉及到的点真不少，下面一条一条捋清楚。 一、HashMap的结构实现 数组+链表/红黑树（JDK1.8新增） 数组的元素是一个内部类Node的实例，Node不仅仅包含key-value值，还包括哈希值hashcode和指向下一个元素的指针next。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-07-07T08:44:03.429Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="goldensoup3的毛坯房">
-<meta name="twitter:description" content="“郡主，世上不如意事十居八九，既已如此，也是勉强不来了。”赵敏道：“我偏要勉强。”">
+<meta name="twitter:title" content="HashMap底层原理">
+<meta name="twitter:description" content="HashMap的底层原理涉及到的点真不少，下面一条一条捋清楚。 一、HashMap的结构实现 数组+链表/红黑树（JDK1.8新增） 数组的元素是一个内部类Node的实例，Node不仅仅包含key-value值，还包括哈希值hashcode和指向下一个元素的指针next。">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2020/">
+  <link rel="canonical" href="http://yoursite.com/2020/06/07/HashMap底层原理/">
 
 
 
 
 
-  <title>归档 | goldensoup3的毛坯房</title>
+  <title>HashMap底层原理 | goldensoup3的毛坯房</title>
   
 
 
@@ -143,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -237,142 +239,210 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/07/HashMap底层原理/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="goldensoup3">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="goldensoup3的毛坯房">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">HashMap底层原理</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-07T11:30:17+08:00">
+                2020-06-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 5 篇日志。 继续努力。
-      </span>
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/基础/" itemprop="url" rel="index">
+                    <span itemprop="name">基础</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2020">2020</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/07/06/Homebrew替换国内镜像源/" itemprop="url">
-              
-                <span itemprop="name">Homebrew替换国内镜像源</span>
-              
-            </a>
-        
-      </h2>
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 已有
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次浏览
+            </span>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-07-06T11:30:07+08:00" content="2020-07-06">
-          07-06
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/07/06/Sierra升Mojave踩到的坑/" itemprop="url">
-              
-                <span itemprop="name">Sierra升Mojave踩到的坑</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-07-06T10:17:49+08:00" content="2020-07-06">
-          07-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/06/07/HashMap底层原理/" itemprop="url">
-              
-                <span itemprop="name">HashMap底层原理</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-06-07T11:30:17+08:00" content="2020-06-07">
-          06-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>HashMap的底层原理涉及到的点真不少，下面一条一条捋清楚。</p>
+<p><strong>一、HashMap的结构实现</strong></p>
+<p>数组+链表/红黑树（JDK1.8新增）</p>
+<p>数组的元素是一个内部类Node的实例，Node不仅仅包含key-value值，还包括哈希值hashcode和指向下一个元素的指针next。<a id="more"></a></p>
+<p><strong>二、几个重要参数</strong></p>
+<p>capacity：数组容量，默认是16，大小只能是2的n次方</p>
+<p>size：键值对的数量</p>
+<p>loadFactor：装载因子，默认是0.75</p>
+<p>threshold：loadFactor * capacity，size高于这个时就需要扩容</p>
+<p><strong>三、确定哈希桶数组索引位置</strong></p>
+<p>计算key的哈希值，对哈希值取模（hashcode % capacity），根据模查找数组下标确定桶，接下来分不同情况：</p>
+<ul>
+<li>如果该桶是空的，直接将节点放置在桶内。</li>
+<li>如果桶里有数据，检查key值，若与将要放置的key相同，则直接覆盖。若不同，遍历序列，过程中如遇到相同key的则直接覆盖。如果遍历完没有key相同的，则根据序列总数判断是链表还是红黑树，是链表的话按头插法插入节点，是红黑树则按红黑树插入规则插入节点。</li>
+</ul>
+<p>插入完节后，还需检查是否需要扩容。若size &gt; threshold，则需要扩容。</p>
+<p><strong>四、hash过程的实际实现</strong></p>
+<p>首先扯点远的，一般来说，对HashTable取模，应该选取素数。为什么呢，反向解释，假如num是一个合数，若hashcode和num有一个公约数m， hashcode % num == （hashcode‘ <em> m） % （num’  </em> m）== （hashcode‘ % num’）* m，也就是说得到的模值一定是m的倍数，那么分配键值对的时候一定不会分到非m倍数下标的桶位置，这样带来的结果就是哈希冲突的几率变大。</p>
+<p>所以按理说HashMap的capacity应该设置成素数更好。</p>
+<p>然而，在Java的HashMap实现中，capacity默认是16，而且后续如果要扩容，也只扩容成2^n，这是为啥呢？</p>
+<p>原来，我们都知道，Java中取模运算在效率上远低于位运算，而HashMap正是巧妙地将取模转换成了位运算。举个例子，capacity初始值为16，用二进制表示即00010000，待取模的hashcode值为10011100，可以发现：</p>
+<p>hashcode % capacity == hashcode &amp; （capacity - 1）</p>
+<p>这样，将取模转换为位运算，大大提高了效率。</p>
+<p>但是，仔细看，这种设计带来了一个新的问题，看上面的例子，（capacity - 1）为00001111，hashcode与它做&amp;运算，可以看到事实上参与运算的只有低四位，而高四位“失效”了，换句话说，若有另外一个hashcode，它只需要低四位是1111，而高四位无论是什么值，取模后得到的是相同的值，这样间接上也增加了哈希冲突概率。那么Java怎么避免这种情况呢？</p>
+<p>它在位运算前，增加了一道高低位<strong>异或</strong>运算，将高16位与低16位异或，得到的值再去与（capacity - 1）做&amp;运算，这样即高低位都间接上参与了运算，减少了哈希冲突。</p>
+<p><strong>五、扩容</strong></p>
+<p>扩容本身很简单，将capacity变为原来的两倍。需要探究的是扩容后重新哈希的方法。如果再做一次取模，开销是不是有点大了呢？</p>
+<p>实际上从JDK1.8开始有个巧妙的实现。继续以capacity=16为例，扩容后变为32。根据上面的实现，模16等价于（&amp;00001111），模32等价于（&amp;00011111），可以发现，低四位在&amp;运算后是不变的，区别就在于第五位。若hashcode的第五位为0，则模16与模32结果相同；若为1，则模32的结果等于模16的值再加16。</p>
+<p>推广一下，当capacity为2^n，扩容为2^(n+1)，扩容后只需要看hashcode的第n+1位，是0的话索引值不变，是1的话索引变为“原索引值+原来的capacity”。</p>
+<p>此外，JDK1.7里扩容后需要重新哈希，而链表插入元素采用头插法，所以相同索引位置的元素顺序也变了，与扩容前顺序相反。</p>
+<p>而JDK1.8不会倒置。</p>
 
       
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/HashMap/" rel="tag"># HashMap</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/04/The-Secret-of-Becoming-Mentally-Strong/" rel="next" title="The Secret of Becoming Mentally Strong">
+                <i class="fa fa-chevron-left"></i> The Secret of Becoming Mentally Strong
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/07/06/Sierra升Mojave踩到的坑/" rel="prev" title="Sierra升Mojave踩到的坑">
+                Sierra升Mojave踩到的坑 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -380,6 +450,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -627,6 +701,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
